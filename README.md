@@ -9,9 +9,7 @@ This is a work-in-progress.
 
 **Note that these bugs only happen if your scrollbars have size, like Windows scrollbars**. macOS-style overlay scrollbars do not affect CSS layout. To see these bugs on macOS you have to manually enable classic scrollbars.
 
-The browser differences below happen if you have an `overflow: auto` element whose size is determined by its content (e.g. an inline-block or a div with auto margins inside a grid). If the overflow element has a constraint on one dimension that causes it to scroll, a scrollbar has to be added for it. Firefox, Edge, and Safari ([for the most part](#layout-bug-3)) shrink the element's inner width to fit the scrollbar and avoid forcing a relayout on the parent element. Chrome adds the scrollbar to the element's total width and does not shrink content.
-
-Note that the examples use inline elements, 
+The browser differences below happen if you have an `overflow: auto` element whose size is determined by its content (e.g. an inline-block or a div with auto margins inside a grid). If the overflow element has a constraint on one dimension that causes it to scroll, a scrollbar has to be added for it. Firefox, Edge, and Safari ([for the most part](#layout-bug-3)) shrink the element's inner width to fit the scrollbar and avoid forcing a relayout on the parent element. Chrome adds the scrollbar to the element's total width and does not shrink content, unless its outer size constraints are reached.
 
 All browsers handle `overflow: scroll` by always adding the scrollbar size to the element.
 
