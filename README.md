@@ -1,7 +1,7 @@
 Scrollbugs
 ==========
 
-Web browsers exhibit some inconsistencies when it comes to handling scrolled content.
+Web browsers exhibit some inconsistencies when it comes to handling scrolled content. This is an attempt to categorize and explain them, and provide work-arounds and layout tests.
 
 This is a work-in-progress.
 
