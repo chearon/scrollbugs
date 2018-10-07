@@ -23,7 +23,7 @@ _Chrome adds the scrollbar to the total size of the block element, other browser
 
 ```html
 <div style="display: inline-block; overflow: auto; height: 100px;">
-  <div style="width: 100px; height: 200px"></div>
+  <div style="width: 100px; height: 200px;"></div>
 </div>
 ```
 
