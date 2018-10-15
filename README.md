@@ -3,6 +3,10 @@ Scrollbugs
 
 Web browsers exhibit some inconsistencies when it comes to handling scrolled content. This is an attempt to categorize and explain them, and provide work-arounds and layout tests.
 
+1. [Block elements and grid elements](#layout-bug-1)
+2. [Flexboxes](#layout-bug-2)
+3. [Scrolling shrinkwrapped grid](#behavioral-bug-1)
+
 ## Layout bugs
 
 The following situation is where the layout differences below happen:
@@ -16,9 +20,6 @@ Note that browsers are _consistent_ in the following:
 * Horizontal scrollbars are always added to the size of the element
 
 Firefox, Edge, and Safari ([for the most part](#layout-bug-2)) shrink the element's inner width to fit the scrollbar and avoid forcing a relayout on the parent element. Chrome adds the scrollbar to the element's total width and does not shrink content, unless its outer size constraints are reached.
-
-1. [Block elements and grid elements](#layout-bug-1)
-2. [Flexboxes](#layout-bug-2)
 
 ### Layout bug #1
 
