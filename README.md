@@ -41,4 +41,14 @@ _Safari and Chrome add the scrollbar to a flexbox's size. Safari initially subtr
 
 ## Behavioral bugs
 
-TBD
+These bugs happen while the user is scrolling.
+
+### Behavioral bug #1
+
+_In a "shrinkwrap" grid layout, Safari discards the scroll position if content triggers a relayout while the user is dragging the scrollbar_
+
+Using `minmax(0, 1fr)` along with `max-height` and `max-width` gives you a magical layout. You can make a container that grows as its content does, but when it hits a limit, begins scrolling. Safari has just one issue with this layout.
+
+#### Example
+
+* [Scrolling shrinkwraped grid](https://jsfiddle.net/xkza85dp/)
