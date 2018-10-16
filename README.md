@@ -74,10 +74,10 @@ _Chrome attempts to keep visible content in a scrolling viewport if it would be 
 
 Chrome probably added this feature to help with badly coded webpages that have ads which change size or load while the user is reading. Unfortunately this behavior can be a nightmare if you're implementing virtual scrolling or something similar.
 
-#### Work-arounds
-
-Replace the visible elements in the viewport with new ones when you update the content (e.g. use `:key` in Vue)
-
 #### Example
 
 * [Shifting down content in a scrolling element](https://jsfiddle.net/kdwp7mzb/)
+
+#### Work-arounds
+
+Replace the visible elements in the viewport with new ones when you update the content (e.g. use `:key` in Vue)
