@@ -46,9 +46,9 @@ These bugs happen while the user is scrolling.
 
 ### Behavioral bug #1
 
-_In a "shrinkwrap" grid layout, Safari discards the scroll position if content triggers a relayout while the user is dragging the scrollbar_
+_In a "shrinkwrap" grid layout, Safari and Chrome discard the scroll position if content triggers a relayout while the user is dragging the scrollbar ([bug](https://bugs.chromium.org/p/chromium/issues/detail?id=878571))_
 
-Using `minmax(0, 1fr)` along with `max-height` and `max-width` gives you a [magical layout](https://www.w3.org/TR/css-grid-1/#algo-flex-tracks). You can make a container that grows as its content does and gets no larger, and also shrinks/scrolls when it hits a specified limit. Safari has just one issue with this layout.
+Using `minmax(0, 1fr)` along with `max-height` and `max-width` gives you a [magical layout](https://www.w3.org/TR/css-grid-1/#algo-flex-tracks). You can make a container that grows as its content does and gets no larger, and also shrinks/scrolls when it hits a specified limit. Safari and Chrome have just one issue with this layout when using the mouse to drag the scrollbar.
 
 #### Example
 
