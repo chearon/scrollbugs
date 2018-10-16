@@ -53,3 +53,13 @@ Using `minmax(0, 1fr)` along with `max-height` and `max-width` gives you a [magi
 #### Example
 
 * [Scrolling shrinkwraped grid](https://jsfiddle.net/xkza85dp/)
+
+### Behavioral bug #2
+
+_Chrome attempts to keep visible content in a scrolling viewport if it would be shifted down by relative positioning changes (div added before content, or height of a div before the content is changed)_
+
+Chrome probably added this feature to help with badly coded webpages that have ads which change size or load while the user is reading. Unfortunately this behavior can be a nightmare if you're implementing virtual scrolling or something similar.
+
+#### Example
+
+* [Shifting down content in a scrolling element](https://jsfiddle.net/kdwp7mzb/)
