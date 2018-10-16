@@ -32,6 +32,11 @@ _Chrome adds the vertical scrollbar to the total size of the block element, othe
 * [Scrolling block as a flex item](http://jsfiddle.net/dunr72ye/)
 * [Scrolling grid](http://jsfiddle.net/rmyjfaq4/)
 
+#### Work-arounds
+
+* Set a fixed width on the scrolling element or some parent element to make everything layout with definite size
+* Detect the shrink-width behavior and if it exists, add the [scrollbar size](https://jsfiddle.net/quLjdn0p/)
+
 ### Layout bug #2
 
 _Safari and Chrome add the scrollbar to a flexbox's size. Safari initially subtracts the scrollbar until its inner content is laid out again (for example, by toggling `flex`)._
@@ -39,6 +44,10 @@ _Safari and Chrome add the scrollbar to a flexbox's size. Safari initially subtr
 #### Example
 
 * [Scrolling flexbox](http://jsfiddle.net/2n7uf8g9/)
+
+#### Work-arounds
+
+The best way is to just avoid this layout - if you need to scroll a flexbox, try wrapping it with something else that scrolls, like another flexbox and scroll the flex item.
 
 ## Behavioral bugs
 
@@ -54,11 +63,19 @@ Using `minmax(0, 1fr)` along with `max-height` and `max-width` gives you a [magi
 
 * [Scrolling shrinkwraped grid](https://jsfiddle.net/xkza85dp/)
 
+#### Work-arounds
+
+Detect if the width/height of the content has hit the constraint and if so, change `max-width/max-height` to `width/height`
+
 ### Behavioral bug #2
 
 _Chrome attempts to keep visible content in a scrolling viewport if it would be shifted down by relative positioning changes (div added before content, or height of a div before the content is changed)_
 
 Chrome probably added this feature to help with badly coded webpages that have ads which change size or load while the user is reading. Unfortunately this behavior can be a nightmare if you're implementing virtual scrolling or something similar.
+
+#### Work-arounds
+
+Replace the visible elements in the viewport with new ones when you update the content (e.g. use `:key` in Vue)
 
 #### Example
 
