@@ -3,9 +3,10 @@ Scrollbugs
 
 Web browsers exhibit some inconsistencies when it comes to handling scrolled content. This is an attempt to categorize and explain them, and provide work-arounds and layout tests.
 
-1. [Block elements and grid elements](#layout-bug-1)
-2. [Flexboxes](#layout-bug-2)
-3. [Scrolling shrinkwrapped grid](#behavioral-bug-1)
+1. [Scrolling block (flow) elements and grid elements](#layout-bug-1)
+2. [Scrolling flexboxes](#layout-bug-2)
+3. [Scrolling in a shrinkwrapped (`minmax(0, 1fr)` with `max-height`) grid](#behavioral-bug-1)
+4. [Shifting down visible content in a scroll area](#behavioral-bug-2)
 
 ## Layout bugs
 
