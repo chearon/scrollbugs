@@ -60,9 +60,10 @@ _In a "shrinkwrap" grid layout, Safari and Chrome discard the scroll position if
 
 Using `minmax(0, 1fr)` along with `max-height` and `max-width` gives you a [magical layout](https://www.w3.org/TR/css-grid-1/#algo-flex-tracks). You can make a container that grows as its content does and gets no larger, and also shrinks/scrolls when it hits a specified limit. Safari and Chrome have just one issue with this layout when using the mouse to drag the scrollbar.
 
-#### Example
+#### Examples
 
-* [Scrolling shrinkwraped grid](https://jsfiddle.net/xkza85dp/)
+* [Dragging a shrinkwraped grid's scrollbar](https://jsfiddle.net/xkza85dp/) Chrome stops scrolling, Safari stops and resets scroll to top
+* [Focusing an input inside the shrinkwrapped grid](https://jsfiddle.net/9z2oxsbd/) Safari resets scroll to top
 
 #### Work-arounds
 
