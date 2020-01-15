@@ -5,8 +5,8 @@ Web browsers exhibit some inconsistencies when it comes to handling scrolled con
 
 1. [Scrolling block (flow) elements and grid elements](#layout-bug-1)
 2. [Scrolling flexboxes](#layout-bug-2)
-3. [Scrolling in a shrinkwrapped (`minmax(0, 1fr)` with `max-height`) grid](#behavioral-bug-1)
-4. [Shifting down visible content in a scroll area](#behavioral-bug-2)
+3. [Scrolling in a shrinkwrapped (`minmax(0, 1fr)` with `max-height`) grid](#behavior-bug-1)
+4. [Shifting down visible content in a scroll area](#behavior-bug-2)
 
 ## Layout bugs
 
@@ -50,11 +50,11 @@ _Safari and Chrome add the scrollbar to a flexbox's size. Safari initially subtr
 
 The best way is to just avoid this layout - if you need to scroll a flexbox, try wrapping it with something else that scrolls, like another flexbox and scroll the flex item.
 
-## Behavioral bugs
+## Behavior bugs
 
 These bugs happen while the user is scrolling.
 
-### Behavioral bug #1
+### Behavior bug #1
 
 _In a "shrinkwrap" grid layout, Safari and Chrome discard the scroll position if content triggers a relayout while the user is dragging the scrollbar ([bug](https://bugs.chromium.org/p/chromium/issues/detail?id=878571))_
 
@@ -69,7 +69,7 @@ Using `minmax(0, 1fr)` along with `max-height` and `max-width` gives you a [magi
 
 Detect if the width/height of the content has hit the constraint and if so, change `max-width/max-height` to `width/height`
 
-### Behavioral bug #2
+### Behavior bug #2
 
 _Chrome attempts to keep visible content in a scrolling viewport if it would be shifted down by relative positioning changes (div added before content, or height of a div before the content is changed)_
 
