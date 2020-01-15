@@ -7,6 +7,7 @@ Web browsers exhibit some inconsistencies when it comes to handling scrolled con
 2. [Scrolling flexboxes](#layout-bug-2)
 3. [Scrolling in a shrinkwrapped (`minmax(0, 1fr)` with `max-height`) grid](#behavior-bug-1)
 4. [Shifting down visible content in a scroll area](#behavior-bug-2)
+5. [Scrolling grid flex item](#behavior-bug-3)
 
 ## Layout bugs
 
@@ -83,3 +84,15 @@ Chrome probably added this feature to help with badly coded webpages that have a
 
 * Use `overflow-anchor: none`. This is the best/fastest solution.
 * Replace the visible elements in the viewport with new ones when you update the content (e.g. use `:key` in Vue)
+
+### Behavior bug #3
+
+_A grid as a flex item that is also a scroll root can sometimes change size in Chrome_
+
+If appended with JS, the layout will be wrong on the first pass, but when the user interacts in a way that causes layout inside the flex item (like appending a grid item) it will self-correct.
+
+Chrome bug: [1042399](https://bugs.chromium.org/p/chromium/issues/detail?id=1042399)
+
+#### Example
+
+* [Grid with intrinsic tracks that contain flexbox with a scrolling grid](https://jsfiddle.net/fqnryp63/)
