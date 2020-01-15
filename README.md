@@ -81,4 +81,5 @@ Chrome probably added this feature to help with badly coded webpages that have a
 
 #### Work-arounds
 
-Replace the visible elements in the viewport with new ones when you update the content (e.g. use `:key` in Vue)
+* Use `overflow-anchor: none`. This is the best/fastest solution.
+* Replace the visible elements in the viewport with new ones when you update the content (e.g. use `:key` in Vue)
